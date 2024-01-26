@@ -5,14 +5,20 @@
 :root {
   --foreground-rgb: 60, 54, 51;
   --background-rgb: 238, 237, 235;
-  --nav-rgb: 254, 250, 224;
+  --nav-foreground-rgb: 238, 237, 235;
+  --nav-background-rgb: 168, 179, 137;
+  --dashnav-foreground-rgb: 238, 237, 235;
+  --dashnav-background-rgb: 94, 110, 83;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 238, 237, 235;
     --background-rgb: 60, 54, 51;
-    --nav-rgb: 169, 179, 136;
+    --nav-foreground-rgb: 238, 237, 235;
+    --nav-background-rgb: 116, 114, 100;
+    --dashnav-foreground-rgb: 238, 237, 235;
+    --dashnav-background-rgb: 94, 110, 83;
   }
 }
 
@@ -22,7 +28,13 @@ body {
 }
 
 .bg-nav {
-  background: rgb(var(--nav-rgb));
+  background: rgb(var(--nav-background-rgb));
+  color: rgb(var(--nav-foreground-rgb));
+}
+
+.bg-dashnav {
+  color: rgb(var(--dashnav-foreground-rgb));
+  background: rgb(var(--dashnav-background-rgb));
 }
 
 @layer utilities {
