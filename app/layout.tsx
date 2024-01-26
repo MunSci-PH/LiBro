@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import Nav from "@/components/default/nav";
-import { ThemeProvider } from "@/components/theme-provider";
+import PrelineScript from "./components/PrelineScript";
+import Nav from "./components/Nav";
 
-export const fontSans = FontSans({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,27 +13,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background antialiased",
-          fontSans.className
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Nav />
-          {children}
-        </ThemeProvider>
+      <body className={inter.className}>
+        <Nav></Nav>
+        {children}
       </body>
+      <PrelineScript />
     </html>
   );
 }
