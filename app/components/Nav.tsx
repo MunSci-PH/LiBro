@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4 bg-green-200 dark:bg-green-800">
+    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm py-4 bg-green-300 dark:bg-green-800">
       <nav
         className="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
         aria-label="Global"

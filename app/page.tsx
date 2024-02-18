@@ -29,16 +29,18 @@ export default function Home() {
 
               <div className="mt-5 max-w-3xl">
                 <p className="text-lg text-gray-600 dark:text-gray-400">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                  quisquam facilis culpa laudantium esse officia optio, quasi
-                  fugit nemo vero iusto. Quisquam harum, quia sit sunt sequi
-                  mollitia omnis? Vero.
+                  {" "}
+                  Munsci LiBro is an e-library that contains categories of books
+                  that are accessible for finding books. Moreover, it can help
+                  you borrow books; you just have to log in, and you will be
+                  given a time when you can get the books you reserved
+                  categories of books.
                 </p>
               </div>
               <div className="mt-8 gap-3 flex justify-center">
                 <a
                   className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="#"
+                  href="/login/user"
                 >
                   Get started
                   <svg
