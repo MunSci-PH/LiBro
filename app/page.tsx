@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Nav from "./components/Nav";
 
 export default function Home() {
@@ -38,9 +39,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-8 gap-3 flex justify-center">
-                <a
+                <Link
                   className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="/login/user"
+                  href="/auth/login"
                 >
                   Get started
                   <svg
@@ -57,7 +58,7 @@ export default function Home() {
                   >
                     <path d="m9 18 6-6-6-6" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
