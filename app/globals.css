@@ -2,40 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/**:root {
-  --foreground-rgb: 60, 54, 51;
-  --background-rgb: 238, 237, 235;
-  --nav-foreground-rgb: 238, 237, 235;
-  --nav-background-rgb: 168, 179, 137;
-  --dashnav-foreground-rgb: 238, 237, 235;
-  --dashnav-background-rgb: 94, 110, 83;
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 238, 237, 235;
-    --background-rgb: 60, 54, 51;
-    --nav-foreground-rgb: 238, 237, 235;
-    --nav-background-rgb: 116, 114, 100;
-    --dashnav-foreground-rgb: 238, 237, 235;
-    --dashnav-background-rgb: 94, 110, 83;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
-
-.bg-nav {
-  background: rgb(var(--nav-background-rgb));
-  color: rgb(var(--nav-foreground-rgb));
-}
-
-.bg-dashnav {
-  color: rgb(var(--dashnav-foreground-rgb));
-  background: rgb(var(--dashnav-background-rgb));
-}**/
 
 @layer utilities {
   .text-balance {
