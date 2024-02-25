@@ -90,7 +90,6 @@ export default function Home() {
                           <span className="label-text">Remember me</span>
                           <input
                             type="checkbox"
-                            defaultChecked
                             className="checkbox checkbox-accent"
                           />
                         </label>
