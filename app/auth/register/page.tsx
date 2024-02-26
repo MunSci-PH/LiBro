@@ -1,8 +1,40 @@
+"use client";
 import Nav from "@/app/components/Nav";
-import LoginAnnouncements from "@/app/components/announcements/login";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
+import { auth } from "@/app/config/firebase";
 import Link from "next/link";
+import { FormEvent, useState } from "react";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setCPassword] = useState("");
+  const [createUserWithEmailAndPassword] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification] = useSendEmailVerification(auth);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      console.error("Password does not match.");
+      return;
+    }
+    try {
+      const res = await createUserWithEmailAndPassword(email, password);
+      console.log({ res });
+      sendEmailVerification();
+      sessionStorage.setItem("user", "true");
+      setEmail("");
+      setPassword("");
+      setCPassword("");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <Nav></Nav>
@@ -34,7 +66,12 @@ export default function Home() {
                 </div>
 
                 <div className="mt-5">
-                  <form>
+                  <form
+                    onSubmit={(e) => {
+                      handleSubmit(e);
+                    }}
+                    className="form-control"
+                  >
                     <div className="grid gap-y-4">
                       <label className="input input-bordered flex items-center gap-2">
                         <svg
@@ -50,6 +87,10 @@ export default function Home() {
                           type="text"
                           className="grow"
                           placeholder="Email"
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                          }}
+                          required
                         />
                       </label>
                       <label className="input input-bordered flex items-center gap-2">
@@ -69,6 +110,10 @@ export default function Home() {
                           type="password"
                           className="grow"
                           placeholder="Password"
+                          onChange={(e) => {
+                            setPassword(e.target.value);
+                          }}
+                          required
                         />
                       </label>
                       <label className="input input-bordered flex items-center gap-2">
@@ -88,6 +133,10 @@ export default function Home() {
                           type="password"
                           className="grow"
                           placeholder="Confirm Password"
+                          onChange={(e) => {
+                            setCPassword(e.target.value);
+                          }}
+                          required
                         />
                       </label>
                       <div className="form-control">
@@ -95,6 +144,7 @@ export default function Home() {
                           <input
                             type="checkbox"
                             className="checkbox checkbox-accent"
+                            required
                           />
                           <span className="label-text">
                             I agree to the terms and conditions.
@@ -105,7 +155,7 @@ export default function Home() {
                         type="submit"
                         className="btn btn-accent text-white"
                       >
-                        Sign in
+                        Sign Up
                       </button>
                     </div>
                   </form>
