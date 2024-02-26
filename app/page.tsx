@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Nav></Nav>
 
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden h-5/6">
         <div
           aria-hidden="true"
           className="flex absolute -top-96 start-1/2 transform -translate-x-1/2"
@@ -15,8 +15,8 @@ export default function Home() {
           <div className="bg-gradient-to-tl from-green-50 via-green-100 to-green-50 blur-3xl w-[90rem] h-[50rem] rounded-fulls origin-top-left -rotate-12 -translate-x-[15rem] dark:from-emerald-900/70 dark:via-emerald-900/70 dark:to-emerald-900/70"></div>
         </div>
 
-        <div className="relative z-10">
-          <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 mt-48">
+        <div className="relative z-10 w-screen flex items-center justify-center h-full">
+          <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
             <div className="max-w-2xl text-center mx-auto">
               <p className="inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-green-600 to-lime-500 text-transparent dark:from-green-400 dark:to-lime-400">
                 MunSci
