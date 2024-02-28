@@ -55,7 +55,7 @@ export default function Home() {
                     Register
                   </h1>
                   <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                    Alread have an account? {""}
+                    Already have an account? {""}
                     <Link
                       className="text-info decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                       href="/auth/login"

@@ -1,8 +1,12 @@
 import Nav from "@/app/components/Nav";
 import LoginAnnouncements from "@/app/components/announcements/login";
 import Link from "next/link";
+import { FormEvent } from "react";
 
 export default function Home() {
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault;
+  };
   return (
     <>
       <Nav></Nav>
@@ -35,7 +39,12 @@ export default function Home() {
                 </div>
 
                 <div className="mt-5">
-                  <form>
+                  <form
+                    onSubmit={(e) => {
+                      handleSubmit(e);
+                    }}
+                    className="form-control"
+                  >
                     <div className="grid gap-y-4">
                       <label className="input input-bordered flex items-center gap-2">
                         <svg
