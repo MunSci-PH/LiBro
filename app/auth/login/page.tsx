@@ -1,3 +1,5 @@
+"use client";
+
 import Nav from "@/app/components/Nav";
 import LoginAnnouncements from "@/app/components/announcements/login";
 import Link from "next/link";
