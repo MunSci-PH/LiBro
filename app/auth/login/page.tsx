@@ -2,12 +2,25 @@
 
 import Nav from "@/app/components/Nav";
 import LoginAnnouncements from "@/app/components/announcements/login";
+import isDarkTheme from "@/app/config/theme";
 import Link from "next/link";
 import { FormEvent } from "react";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault;
+    e.preventDefault();
+    try {
+      toast.error("hi", {
+        position: "top-right",
+        theme: isDarkTheme() ? "dark" : "light",
+      });
+    } catch (error: any) {
+      toast.error(error, {
+        position: "top-right",
+        theme: isDarkTheme() ? "dark" : "light",
+      });
+    }
   };
   return (
     <>

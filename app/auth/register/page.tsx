@@ -7,6 +7,9 @@ import {
 import { auth } from "@/app/config/firebase";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { toast } from "react-toastify";
+import isDarkTheme from "@/app/config/theme";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -15,11 +18,15 @@ export default function Home() {
   const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
   const [sendEmailVerification] = useSendEmailVerification(auth);
+  const router = useRouter();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      console.error("Password does not match.");
+      toast.error("Password does not match!", {
+        position: "top-right",
+        theme: isDarkTheme() ? "dark" : "light",
+      });
       return;
     }
     try {
@@ -27,11 +34,19 @@ export default function Home() {
       console.log({ res });
       sendEmailVerification();
       sessionStorage.setItem("user", "true");
+    } catch (error: any) {
+      console.error(error);
+      toast.error("Something went wrong, please try again.", {
+        position: "top-right",
+        theme: isDarkTheme() ? "dark" : "light",
+      });
+      return;
+    }
+    if (sessionStorage.getItem("user") == "true") {
       setEmail("");
       setPassword("");
       setCPassword("");
-    } catch (error) {
-      console.error(error);
+      router.push("/auth/login");
     }
   };
 
