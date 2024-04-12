@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <div className="navbar bg-green-300 dark:bg-primary">
+    <div className="z-10 navbar bg-green-300 dark:bg-primary">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" href="/">
           <Image

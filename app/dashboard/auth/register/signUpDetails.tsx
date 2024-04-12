@@ -39,7 +39,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
 
   return (
     <>
-      <label className="form-control w-full max-w-xs">
+      <label className="form-control w-full">
         <label className="input input-bordered flex items-center gap-2">
           <FaHashtag
             className="text-neutral-200 w-4 h-4 opacity-70"
@@ -73,111 +73,113 @@ export const SignUpDetails: React.FC<IContainerProps> = (
           />
         </div>
       </label>
-      <label className="form-control w-full max-w-xs">
-        <label className="input input-bordered flex items-center gap-2">
-          <FaUser
-            className="text-neutral-200 w-4 h-4 opacity-70"
-            width={"1rem"}
-            height={"1rem"}
-          />
-          <input
-            type="text"
-            className="grow"
-            placeholder="First Name"
-            required
-            {...props.register("firstName", {
-              required: { value: true, message: "This field is required." },
-              maxLength: {
-                value: 30,
-                message: "Must not exceed 30 characters.",
-              },
-            })}
-          />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <label className="form-control w-full max-w-xs">
+          <label className="input input-bordered flex items-center gap-2">
+            <FaUser
+              className="text-neutral-200 w-4 h-4 opacity-70"
+              width={"1rem"}
+              height={"1rem"}
+            />
+            <input
+              type="text"
+              className="grow"
+              placeholder="First Name"
+              required
+              {...props.register("firstName", {
+                required: { value: true, message: "This field is required." },
+                maxLength: {
+                  value: 30,
+                  message: "Must not exceed 30 characters.",
+                },
+              })}
+            />
+          </label>
+          <div className={props.errors.firstName ? "label" : "label hidden"}>
+            <ErrorMessage
+              errors={props.errors}
+              name="firstName"
+              render={({ message }) => {
+                return (
+                  <span className="label-text-alt text-error text-left font-bold">
+                    {message}
+                  </span>
+                );
+              }}
+            />
+          </div>
         </label>
-        <div className={props.errors.firstName ? "label" : "label hidden"}>
-          <ErrorMessage
-            errors={props.errors}
-            name="firstName"
-            render={({ message }) => {
-              return (
-                <span className="label-text-alt text-error text-left font-bold">
-                  {message}
-                </span>
-              );
-            }}
-          />
-        </div>
-      </label>
-      <label className="form-control w-full max-w-xs">
-        <label className="input input-bordered flex items-center gap-2">
-          <FaUser
-            className="text-neutral-200 w-4 h-4 opacity-70"
-            width={"1rem"}
-            height={"1rem"}
-          />
-          <input
-            type="text"
-            className="grow"
-            placeholder="Middle Name"
-            required
-            {...props.register("middleName", {
-              maxLength: {
-                value: 30,
-                message: "Must not exceed 30 characters.",
-              },
-            })}
-          />
+        <label className="form-control w-full max-w-xs">
+          <label className="input input-bordered flex items-center gap-2">
+            <FaUser
+              className="text-neutral-200 w-4 h-4 opacity-70"
+              width={"1rem"}
+              height={"1rem"}
+            />
+            <input
+              type="text"
+              className="grow"
+              placeholder="Middle Name"
+              required
+              {...props.register("middleName", {
+                maxLength: {
+                  value: 30,
+                  message: "Must not exceed 30 characters.",
+                },
+              })}
+            />
+          </label>
+          <div className={props.errors.middleName ? "label" : "label hidden"}>
+            <ErrorMessage
+              errors={props.errors}
+              name="middleName"
+              render={({ message }) => {
+                return (
+                  <span className="label-text-alt text-error text-left font-bold">
+                    {message}
+                  </span>
+                );
+              }}
+            />
+          </div>
         </label>
-        <div className={props.errors.middleName ? "label" : "label hidden"}>
-          <ErrorMessage
-            errors={props.errors}
-            name="middleName"
-            render={({ message }) => {
-              return (
-                <span className="label-text-alt text-error text-left font-bold">
-                  {message}
-                </span>
-              );
-            }}
-          />
-        </div>
-      </label>
-      <label className="form-control w-full max-w-xs">
-        <label className="input input-bordered flex items-center gap-2">
-          <FaUser
-            className="text-neutral-200 w-4 h-4 opacity-70"
-            width={"1rem"}
-            height={"1rem"}
-          />
-          <input
-            type="text"
-            className="grow"
-            placeholder="Last Name"
-            required
-            {...props.register("lastName", {
-              required: { value: true, message: "This field is required." },
-              maxLength: {
-                value: 30,
-                message: "Must not exceed 30 characters.",
-              },
-            })}
-          />
+        <label className="form-control w-full max-w-xs">
+          <label className="input input-bordered flex items-center gap-2">
+            <FaUser
+              className="text-neutral-200 w-4 h-4 opacity-70"
+              width={"1rem"}
+              height={"1rem"}
+            />
+            <input
+              type="text"
+              className="grow"
+              placeholder="Last Name"
+              required
+              {...props.register("lastName", {
+                required: { value: true, message: "This field is required." },
+                maxLength: {
+                  value: 30,
+                  message: "Must not exceed 30 characters.",
+                },
+              })}
+            />
+          </label>
+          <div className={props.errors.lastName ? "label" : "label hidden"}>
+            <ErrorMessage
+              errors={props.errors}
+              name="lastName"
+              render={({ message }) => {
+                return (
+                  <span className="label-text-alt text-error text-left font-bold">
+                    {message}
+                  </span>
+                );
+              }}
+            />
+          </div>
         </label>
-        <div className={props.errors.lastName ? "label" : "label hidden"}>
-          <ErrorMessage
-            errors={props.errors}
-            name="lastName"
-            render={({ message }) => {
-              return (
-                <span className="label-text-alt text-error text-left font-bold">
-                  {message}
-                </span>
-              );
-            }}
-          />
-        </div>
-      </label>
-      <label className="form-control w-full max-w-xs">
+      </div>
+      <label className="form-control w-full">
         <label className="input input-bordered flex items-center gap-2">
           <FaHashtag
             className="text-neutral-200 w-4 h-4 opacity-70"
@@ -213,7 +215,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
           />
         </div>
       </label>
-      <label className="form-control w-full max-w-xs">
+      <label className="form-control w-full ">
         <label className="input input-bordered flex items-center gap-2">
           <FaHouse
             className="text-neutral-200 w-4 h-4 opacity-70"
@@ -244,7 +246,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
           />
         </div>
       </label>
-      <label className="form-control w-full max-w-xs">
+      <label className="form-control w-full ">
         <label className="select select-bordered relative flex items-center gap-2 outline-2 outline-offset-2 outline-base-content/20 focus-within:outline">
           <FaBriefcase
             className="text-neutral-200 w-4 h-4 opacity-70"
@@ -281,7 +283,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         </div>
       </label>
       {props.watch("occupation") == "student" ? (
-        <label className="form-control w-full max-w-xs">
+        <label className="form-control w-full ">
           <label className="select select-bordered relative flex items-center gap-2 outline-2 outline-offset-2 outline-base-content/20 focus-within:outline">
             <FaHashtag
               className="text-neutral-200 w-4 h-4 opacity-70"
@@ -327,7 +329,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         <></>
       )}
       {props.watch("grade")! >= 7 && sectionList ? (
-        <label className="form-control w-full max-w-xs">
+        <label className="form-control w-full ">
           <label className="select select-bordered relative flex items-center gap-2 outline-2 outline-offset-2 outline-base-content/20 focus-within:outline">
             <FaUsers
               className="text-neutral-200 w-4 h-4 opacity-70"
@@ -368,7 +370,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
       ) : (
         <></>
       )}
-      <div className="form-control">
+      <div className="form-control max-w-xs">
         <label className="cursor-pointer label gap-2">
           <input
             type="checkbox"
