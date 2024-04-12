@@ -9,7 +9,7 @@ const Nav = async () => {
   let isLoggedIn: boolean = false;
   const { data } = await supabase.auth.getSession();
 
-  if (data) isLoggedIn = true;
+  if (data.session) isLoggedIn = true;
 
   return (
     <div className="z-10 navbar bg-green-300 dark:bg-primary rounded-box my-4 mx-auto w-[90%] md:w-[97%]">
@@ -31,7 +31,10 @@ const Nav = async () => {
             </li>
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl font-extrabold">
+        <Link
+          href="/"
+          className="btn btn-ghost text-xl font-extrabold text-white"
+        >
           <Image
             src={"/logo/without-text.png"}
             width={32}
