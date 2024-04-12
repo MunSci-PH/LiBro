@@ -1,11 +1,8 @@
 import Link from "next/link";
-import Nav from "@/app/components/Nav";
 
-export default function Home() {
+export default function Dashboard() {
   return (
     <>
-      <Nav></Nav>
-
       <div className="relative overflow-hidden h-5/6">
         <div
           aria-hidden="true"
@@ -41,7 +38,7 @@ export default function Home() {
               <div className="mt-8 gap-3 flex justify-center">
                 <Link
                   className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-green-600 text-white hover:bg-green-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="/auth/login"
+                  href="/dashboard/auth/login"
                 >
                   Get started
                   <svg

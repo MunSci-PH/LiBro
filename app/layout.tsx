@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.min.css";
 import "./globals.css";
+import Nav from "./components/Nav";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} bg-neutral-200 dark:bg-neutral-900 text-black dark:text-neutral-200 h-dvh`}
       >
+        <Nav></Nav>
         {children}
         <ToastContainer />
       </body>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 const Nav = () => {
@@ -7,6 +8,13 @@ const Nav = () => {
     <div className="navbar bg-green-300 dark:bg-primary">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" href="/">
+          <Image
+            src={"/logo/without-text.png"}
+            width={32}
+            height={32}
+            alt="Logo"
+            className="inline-block"
+          />
           MunSci LiBro
         </Link>
       </div>
@@ -16,7 +24,7 @@ const Nav = () => {
             <Link href="#">About</Link>
           </li>
           <li>
-            <Link href="/auth/login">Dashboard</Link>
+            <Link href="/dashboard/auth/login">Dashboard</Link>
           </li>
         </ul>
       </div>
