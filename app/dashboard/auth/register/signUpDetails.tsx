@@ -2,7 +2,7 @@ import { FieldErrors, UseFormRegister, UseFormWatch } from "react-hook-form";
 import { signUpData } from "./page";
 import { FaUser } from "react-icons/fa";
 import { ErrorMessage } from "@hookform/error-message";
-import { FaBriefcase, FaHashtag, FaUsers } from "react-icons/fa6";
+import { FaBriefcase, FaHashtag, FaHouse, FaUsers } from "react-icons/fa6";
 import { useState } from "react";
 import { createClient } from "@/app/config/client";
 import { QueryData } from "@supabase/supabase-js";
@@ -39,6 +39,40 @@ export const SignUpDetails: React.FC<IContainerProps> = (
 
   return (
     <>
+      <label className="form-control w-full max-w-xs">
+        <label className="input input-bordered flex items-center gap-2">
+          <FaHashtag
+            className="text-neutral-200 w-4 h-4 opacity-70"
+            width={"1rem"}
+            height={"1rem"}
+          />
+          <input
+            type="text"
+            className="grow"
+            placeholder="LRN"
+            required
+            {...props.register("lrn", {
+              required: { value: true, message: "This field is required." },
+              minLength: { value: 12, message: "Must be 12 characters only." },
+              maxLength: { value: 12, message: "Must be 12 characters only." },
+              pattern: { value: /[0-9]{12}/, message: "Must only be numbers" },
+            })}
+          />
+        </label>
+        <div className={props.errors.lrn ? "label" : "label hidden"}>
+          <ErrorMessage
+            errors={props.errors}
+            name="lrn"
+            render={({ message }) => {
+              return (
+                <span className="label-text-alt text-error text-left font-bold">
+                  {message}
+                </span>
+              );
+            }}
+          />
+        </div>
+      </label>
       <label className="form-control w-full max-w-xs">
         <label className="input input-bordered flex items-center gap-2">
           <FaUser
@@ -133,6 +167,73 @@ export const SignUpDetails: React.FC<IContainerProps> = (
           <ErrorMessage
             errors={props.errors}
             name="lastName"
+            render={({ message }) => {
+              return (
+                <span className="label-text-alt text-error text-left font-bold">
+                  {message}
+                </span>
+              );
+            }}
+          />
+        </div>
+      </label>
+      <label className="form-control w-full max-w-xs">
+        <label className="input input-bordered flex items-center gap-2">
+          <FaHashtag
+            className="text-neutral-200 w-4 h-4 opacity-70"
+            width={"1rem"}
+            height={"1rem"}
+          />
+          <input
+            type="text"
+            className="grow"
+            placeholder="Phone Number"
+            required
+            {...props.register("number", {
+              required: { value: true, message: "This field is required." },
+              pattern: {
+                value: /((^(\+)(\d){12}$)|(^\d{11}$))/,
+                message:
+                  "Only accepts the following format: 09151231234 or +6391551231234",
+              },
+            })}
+          />
+        </label>
+        <div className={props.errors.number ? "label" : "label hidden"}>
+          <ErrorMessage
+            errors={props.errors}
+            name="number"
+            render={({ message }) => {
+              return (
+                <span className="label-text-alt text-error text-left font-bold">
+                  {message}
+                </span>
+              );
+            }}
+          />
+        </div>
+      </label>
+      <label className="form-control w-full max-w-xs">
+        <label className="input input-bordered flex items-center gap-2">
+          <FaHouse
+            className="text-neutral-200 w-4 h-4 opacity-70"
+            width={"1rem"}
+            height={"1rem"}
+          />
+          <input
+            type="text"
+            className="grow"
+            placeholder="Address"
+            required
+            {...props.register("address", {
+              required: { value: true, message: "This field is required." },
+            })}
+          />
+        </label>
+        <div className={props.errors.address ? "label" : "label hidden"}>
+          <ErrorMessage
+            errors={props.errors}
+            name="address"
             render={({ message }) => {
               return (
                 <span className="label-text-alt text-error text-left font-bold">
