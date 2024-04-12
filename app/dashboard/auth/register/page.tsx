@@ -70,7 +70,7 @@ export default function Home() {
       console.log(result);
       console.log(errors);
 
-      if (!result) {
+      if (result) {
         setPage(2);
       }
     } else {
@@ -78,7 +78,7 @@ export default function Home() {
 
       console.log(errors);
 
-      if (!result) handleSubmit(trySignUp);
+      if (result) handleSubmit(trySignUp);
     }
   };
 
