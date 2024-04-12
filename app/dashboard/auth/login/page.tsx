@@ -155,15 +155,6 @@ export default function Home() {
                       />
                     </div>
                   </label>
-                  <div className="form-control">
-                    <label className="cursor-pointer label">
-                      <span className="label-text">Remember me</span>
-                      <input
-                        type="checkbox"
-                        className="checkbox checkbox-accent"
-                      />
-                    </label>
-                  </div>
                   <button
                     type="submit"
                     className="btn btn-accent text-white"
