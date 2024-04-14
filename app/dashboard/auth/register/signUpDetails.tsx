@@ -42,7 +42,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
       <label className="form-control w-full">
         <label className="input input-bordered flex items-center gap-2">
           <FaHashtag
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className=" w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           />
@@ -77,7 +77,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         <label className="form-control w-full max-w-xs">
           <label className="input input-bordered flex items-center gap-2">
             <FaUser
-              className="text-neutral-200 w-4 h-4 opacity-70"
+              className=" w-4 h-4 opacity-70"
               width={"1rem"}
               height={"1rem"}
             />
@@ -112,7 +112,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         <label className="form-control w-full max-w-xs">
           <label className="input input-bordered flex items-center gap-2">
             <FaUser
-              className="text-neutral-200 w-4 h-4 opacity-70"
+              className=" w-4 h-4 opacity-70"
               width={"1rem"}
               height={"1rem"}
             />
@@ -146,7 +146,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         <label className="form-control w-full max-w-xs">
           <label className="input input-bordered flex items-center gap-2">
             <FaUser
-              className="text-neutral-200 w-4 h-4 opacity-70"
+              className=" w-4 h-4 opacity-70"
               width={"1rem"}
               height={"1rem"}
             />
@@ -182,7 +182,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
       <label className="form-control w-full">
         <label className="input input-bordered flex items-center gap-2">
           <FaHashtag
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className=" w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           />
@@ -218,7 +218,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
       <label className="form-control w-full ">
         <label className="input input-bordered flex items-center gap-2">
           <FaHouse
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className=" w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           />
@@ -249,7 +249,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
       <label className="form-control w-full ">
         <label className="select select-bordered relative flex items-center gap-2 outline-2 outline-offset-2 outline-base-content/20 focus-within:outline">
           <FaBriefcase
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className=" w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           ></FaBriefcase>
@@ -286,7 +286,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         <label className="form-control w-full ">
           <label className="select select-bordered relative flex items-center gap-2 outline-2 outline-offset-2 outline-base-content/20 focus-within:outline">
             <FaHashtag
-              className="text-neutral-200 w-4 h-4 opacity-70"
+              className=" w-4 h-4 opacity-70"
               width={"1rem"}
               height={"1rem"}
             ></FaHashtag>
@@ -332,7 +332,7 @@ export const SignUpDetails: React.FC<IContainerProps> = (
         <label className="form-control w-full ">
           <label className="select select-bordered relative flex items-center gap-2 outline-2 outline-offset-2 outline-base-content/20 focus-within:outline">
             <FaUsers
-              className="text-neutral-200 w-4 h-4 opacity-70"
+              className=" w-4 h-4 opacity-70"
               width={"1rem"}
               height={"1rem"}
             ></FaUsers>

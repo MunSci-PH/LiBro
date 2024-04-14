@@ -18,7 +18,7 @@ export const SignUpForm: React.FC<IContainerProps> = (
       <label className="form-control w-full max-w-xs">
         <label className="input input-bordered flex items-center gap-2">
           <FaEnvelope
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className=" w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           />
@@ -54,7 +54,7 @@ export const SignUpForm: React.FC<IContainerProps> = (
       <label className="form-control w-full max-w-xs">
         <label className="input input-bordered flex items-center gap-2">
           <FaKey
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className=" w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           />
@@ -92,7 +92,7 @@ export const SignUpForm: React.FC<IContainerProps> = (
       <label className="form-control w-full max-w-xs">
         <label className="input input-bordered flex items-center gap-2">
           <FaKey
-            className="text-neutral-200 w-4 h-4 opacity-70"
+            className="w-4 h-4 opacity-70"
             width={"1rem"}
             height={"1rem"}
           />

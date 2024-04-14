@@ -19,11 +19,11 @@ export const LogoutButton = () => {
       className="btn btn-accent text-white"
     >
       <FaRightFromBracket
-        className="text-neutral-200 w-4 h-4 inline-block"
+        className="w-4 h-4 inline-block"
         width={"1rem"}
         height={"1rem"}
       />
-      LOG OUT
+      <span className="hidden md:block">LOGOUT</span>
     </button>
   );
 };

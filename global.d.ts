@@ -44,6 +44,39 @@ export type Database = {
         };
         Relationships: [];
       };
+      orders: {
+        Row: {
+          book_num: number;
+          created_at: string;
+          duration: number;
+          id: string;
+          pickup_date: string | null;
+          purpose: string;
+          status: string | null;
+          user_id: string;
+        };
+        Insert: {
+          book_num: number;
+          created_at?: string;
+          duration: number;
+          id?: string;
+          pickup_date?: string | null;
+          purpose: string;
+          status?: string | null;
+          user_id: string;
+        };
+        Update: {
+          book_num?: number;
+          created_at?: string;
+          duration?: number;
+          id?: string;
+          pickup_date?: string | null;
+          purpose?: string;
+          status?: string | null;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
       sections: {
         Row: {
           grade: number;

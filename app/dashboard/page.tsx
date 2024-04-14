@@ -3,13 +3,16 @@
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import { createClient } from "../config/client";
-import { FormEvent, Suspense, use, useEffect, useState } from "react";
+import { FormEvent, Suspense, use, useEffect, useRef, useState } from "react";
 import Loading from "../loading";
 import { QueryData } from "@supabase/supabase-js";
+import { useForm } from "react-hook-form";
 
 const supabase = createClient();
 
 const getBooks = async (searchQuery: string, genre: string, range: number) => {
+  console.log(searchQuery, genre, range);
+
   let bookQuery = supabase
     .from("books")
     .select("*")
@@ -38,53 +41,53 @@ const getBooks = async (searchQuery: string, genre: string, range: number) => {
 };
 
 export default function Dashboard() {
+  const { getValues, register } = useForm();
   const [genre, setGenre] = useState<string>("");
   const [searchQuery, setQuery] = useState<string>("");
   const [scrollPosition, setScrollPosition] = useState(0);
-  let range = 19;
-
-  const infiniteScroll = () => {
-    console.log("triggered");
-    const newRange = range + 20;
-    if (newRange != range) range = newRange;
-    console.log(range, newRange);
-    getBooks(searchQuery, genre, newRange).then((e) => setBookList(e));
-  };
-
-  const handleScroll = () => {
-    let supportPageOffset = window.pageXOffset !== undefined;
-    let isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
-    let scroll = {
-      x: supportPageOffset
-        ? window.pageXOffset
-        : isCSS1Compat
-        ? document.documentElement.scrollLeft
-        : document.body.scrollLeft,
-      y: supportPageOffset
-        ? window.pageYOffset
-        : isCSS1Compat
-        ? document.documentElement.scrollTop
-        : document.body.scrollTop,
-    };
-
-    let position =
-      (scroll.y /
-        (document.documentElement.offsetHeight - window.innerHeight)) *
-      100;
-    setScrollPosition(position);
-
-    if (Math.round(position) >= 90 && Math.round(position) <= 91) {
-      infiniteScroll();
-    }
-  };
+  let range = useRef(19);
 
   useEffect(() => {
+    const infiniteScroll = () => {
+      console.log("triggered");
+      range.current = range.current + 19;
+      console.log(range.current);
+      getBooks(searchQuery, genre, range.current).then((e) => setBookList(e));
+    };
+
+    const handleScroll = () => {
+      let supportPageOffset = window.pageXOffset !== undefined;
+      let isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+      let scroll = {
+        x: supportPageOffset
+          ? window.pageXOffset
+          : isCSS1Compat
+          ? document.documentElement.scrollLeft
+          : document.body.scrollLeft,
+        y: supportPageOffset
+          ? window.pageYOffset
+          : isCSS1Compat
+          ? document.documentElement.scrollTop
+          : document.body.scrollTop,
+      };
+
+      let position =
+        (scroll.y /
+          (document.documentElement.offsetHeight - window.innerHeight)) *
+        100;
+      setScrollPosition(position);
+
+      if (Math.round(position) >= 90 && Math.round(position) <= 91) {
+        infiniteScroll();
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [genre, searchQuery]);
 
   const bookQuery = supabase.from("books").select("*");
 
@@ -95,16 +98,28 @@ export default function Dashboard() {
     getBooks("", "", 19).then((e) => setBookList(e));
   }, []);
 
-  const queryChange = async (e: FormEvent) => {
-    e.preventDefault();
+  const queryChange = async () => {
+    setQuery(getValues("searchQuery"));
 
-    setBookList(await getBooks(searchQuery, genre, range));
+    await getBooks(searchQuery, genre, range.current).then((e) =>
+      setBookList(e)
+    );
   };
 
-  const genreChange = async (e: { target: { value: string } }) => {
-    setGenre(e.target.value);
-
-    setBookList(await getBooks(searchQuery, genre, range));
+  const genreChange = async () => {
+    const newGenre = await getValues("genre");
+    console.log(newGenre);
+    if (newGenre == "none") {
+      setGenre("");
+      await getBooks(searchQuery, newGenre, range.current).then((e) =>
+        setBookList(e)
+      );
+    } else {
+      setGenre(newGenre);
+      await getBooks(searchQuery, newGenre, range.current).then((e) =>
+        setBookList(e)
+      );
+    }
   };
   return (
     <>
@@ -131,23 +146,22 @@ export default function Dashboard() {
                     <input
                       className="input input-bordered join-item"
                       placeholder="Search"
-                      onKeyDown={async (e) => {
-                        if (e.key == "Enter") {
-                          await queryChange(e);
-                        }
-                      }}
-                      onChange={(e) => {
-                        setQuery(e.target.value);
-                      }}
+                      {...register("searchQuery", {
+                        onChange: async () => {
+                          await queryChange();
+                        },
+                      })}
                     />
                   </div>
                 </div>
                 <select
                   className="select select-bordered join-item"
                   defaultValue="none"
-                  onChange={async (e) => {
-                    await genreChange(e);
-                  }}
+                  {...register("genre", {
+                    onChange: async () => {
+                      await genreChange();
+                    },
+                  })}
                 >
                   <option value="none" disabled>
                     Filter

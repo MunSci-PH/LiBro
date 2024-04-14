@@ -15,17 +15,18 @@ export default function Home() {
               alt="Logo"
               className="mx-auto my-1"
             />
-            <h1 className="block font-semibold text-4xl md:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-r from-green-600 to-lime-500 text-transparent dark:from-green-400 dark:to-lime-400">
-              MunSci LiBro
+            <h1 className="block font-extrabold text-4xl md:text-5xl lg:text-6xl bg-clip-text bg-gradient-to-r from-green-600 to-lime-500 text-transparent dark:from-green-400 dark:to-lime-400">
+              MUNSCI LIBRO
             </h1>
           </div>
 
           <div className="mt-5 max-w-3xl">
             <p className="text-lg text-gray-600 dark:text-gray-400">
-              Munsci LiBro is an e-library that contains categories of books
-              that are accessible for finding books. Moreover, it can help you
-              borrow books; you just have to log in, and you will be given a
-              time when you can get the books you reserved categories of books.
+              Muntinlupa Science High School&apos;s LiBro web app is an
+              e-library that contains categories of books that are accessible
+              for finding books. Moreover, it can help you borrow books; you
+              just have to log in, and you will be given a time when you can get
+              the books you reserved categories of books.
             </p>
           </div>
           <div className="mt-8 gap-3 flex justify-center">

@@ -16,27 +16,31 @@ const config: Config = {
   daisyui: {
     themes: [
       {
-        mytheme: {
-          primary: "#15803d",
-
-          secondary: "#166534",
-
+        myLight: {
+          primary: "#86efac",
+          secondary: "#bbf7d0",
           accent: "#22c55e",
-
           neutral: "#44403c",
-
-          "base-100": "#292524",
-
+          "base-100": "#e5e5e5",
           info: "#06b6d4",
-
           success: "#4ade80",
-
           warning: "#fb923c",
-
+          error: "#b91c1c",
+        },
+        myDark: {
+          primary: "#15803d",
+          secondary: "#166534",
+          accent: "#22c55e",
+          neutral: "#44403c",
+          "base-100": "#292524",
+          info: "#06b6d4",
+          success: "#4ade80",
+          warning: "#fb923c",
           error: "#b91c1c",
         },
       },
     ],
+    darkTheme: "myDark",
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
