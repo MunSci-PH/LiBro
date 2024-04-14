@@ -9,11 +9,7 @@ import { QueryData } from "@supabase/supabase-js";
 
 const supabase = createClient();
 
-export const getBooks = async (
-  searchQuery: string,
-  genre: string,
-  range: number
-) => {
+const getBooks = async (searchQuery: string, genre: string, range: number) => {
   let bookQuery = supabase
     .from("books")
     .select("*")
@@ -132,7 +128,7 @@ export default function Dashboard() {
               <Link
                 key={e.acc_num}
                 className="group flex flex-col bg-emerald-200 border shadow-sm rounded-xl hover:shadow-md transition dark:bg-emerald-900 dark:border-gray-800"
-                href="/dashboard/book/"
+                href={`/dashboard/book?acc_num=${e.acc_num}`}
               >
                 <div className="p-4 md:p-5">
                   <div className="flex justify-between items-center">
