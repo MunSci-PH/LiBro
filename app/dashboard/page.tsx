@@ -41,10 +41,50 @@ export default function Dashboard() {
   const [genre, setGenre] = useState<string>("");
   const [searchQuery, setQuery] = useState<string>("");
   const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
+  let range = 19;
+
+  const infiniteScroll = () => {
+    console.log("triggered");
+    const newRange = range + 20;
+    if (newRange != range) range = newRange;
+    console.log(range, newRange);
+    getBooks(searchQuery, genre, newRange).then((e) => setBookList(e));
   };
+
+  const handleScroll = () => {
+    let supportPageOffset = window.pageXOffset !== undefined;
+    let isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+    let scroll = {
+      x: supportPageOffset
+        ? window.pageXOffset
+        : isCSS1Compat
+        ? document.documentElement.scrollLeft
+        : document.body.scrollLeft,
+      y: supportPageOffset
+        ? window.pageYOffset
+        : isCSS1Compat
+        ? document.documentElement.scrollTop
+        : document.body.scrollTop,
+    };
+
+    let position =
+      (scroll.y /
+        (document.documentElement.offsetHeight - window.innerHeight)) *
+      100;
+    setScrollPosition(position);
+
+    if (Math.round(position) >= 90 && Math.round(position) <= 91) {
+      infiniteScroll();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const bookQuery = supabase.from("books").select("*");
 
@@ -58,13 +98,13 @@ export default function Dashboard() {
   const queryChange = async (e: FormEvent) => {
     e.preventDefault();
 
-    setBookList(await getBooks(searchQuery, genre, 19));
+    setBookList(await getBooks(searchQuery, genre, range));
   };
 
   const genreChange = async (e: { target: { value: string } }) => {
     setGenre(e.target.value);
 
-    setBookList(await getBooks(searchQuery, genre, 19));
+    setBookList(await getBooks(searchQuery, genre, range));
   };
   return (
     <>
