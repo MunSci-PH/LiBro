@@ -52,7 +52,7 @@ const Nav = async () => {
               <></>
             )}
             <li>
-              <Link href="#">ABOUT</Link>
+              <Link href="/about/">ABOUT</Link>
             </li>
           </ul>
         </div>

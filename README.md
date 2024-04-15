@@ -6,9 +6,9 @@ An app used by the library and students for easy borrowing/returning of books.
 
 ### NodeJS installation
 
-First, install Node.js by downloading it [here](https://nodejs.org/en) and running the executable.
+First, install Bun by following the instructions on the [website](https://bun.sh/) and running the executable.
 
-You should now be able to run `node -v` in your commmand prompt/terminal.
+You should now be able to run `bun` in your commmand prompt/terminal.
 
 ### Git Installation
 
@@ -38,19 +38,13 @@ Run a new command prompt/terminal window and run the following commands:
 ```bash
 git clone https://github.com/MunSci-PH/LiBro
 cd LiBro
-npm i
+bun i
 code .
 ```
 
 Then run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
 
@@ -67,3 +61,5 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [TailwindCSS Documentation](https://tailwindcss.com/docs/) - learn about TailwindCSS
+- [DaisyUI Website](https://daisyui.com/) - learn about DaisyUI
+-
