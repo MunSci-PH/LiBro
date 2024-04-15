@@ -1,7 +1,13 @@
-import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { Metadata } from "next";
+import elayne from "@/public/aboutpics/elayne.png";
+import gab from "@/public/aboutpics/gab.jpg";
+import janna from "@/public/aboutpics/janna.jpg";
+import jas from "@/public/aboutpics/jas.jpg";
+import karl from "@/public/aboutpics/karl.jpg";
+import princess from "@/public/aboutpics/princess.jpg";
+import si from "@/public/aboutpics/si.jpg";
 
 export const metadata: Metadata = {
   title: "About | MunSci LiBro",
@@ -36,10 +42,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/jas.jpg"
-                  width={96}
-                  height={96}
+                  src={jas}
                   alt="Jasmine Caye Raymundo"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Jasmine Caye Raymundo</h3>
@@ -48,10 +53,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/si.jpg"
-                  width={96}
-                  height={96}
+                  src={si}
                   alt="Sulpicio IV Demontaño"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Sulpicio IV Demontaño</h3>
@@ -60,10 +64,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/gab.jpg"
-                  width={96}
-                  height={96}
+                  src={gab}
                   alt="Gabriel Nathan Toledo"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Gabriel Nathan Toledo</h3>
@@ -72,10 +75,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/princess.jpg"
-                  width={96}
-                  height={96}
+                  src={princess}
                   alt="Princess Denise Parayno"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Princess Denise Parayno</h3>
@@ -84,10 +86,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/elayne.png"
-                  width={96}
-                  height={96}
+                  src={elayne}
                   alt="Elayne Abad"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Elayne Abad</h3>
@@ -96,10 +97,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/karl.jpg"
-                  width={96}
-                  height={96}
+                  src={karl}
                   alt="Karl Hendrix Ruiz"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Karl Hendrix Ruiz</h3>
@@ -108,10 +108,9 @@ export default function About() {
               <div className="text-center">
                 <Image
                   className="rounded-full size-24 mx-auto"
-                  src="/aboutpics/janna.jpg"
-                  width={96}
-                  height={96}
+                  src={janna}
                   alt="Janna Mary Delfino"
+                  placeholder="blur"
                 />
                 <div className="mt-2 sm:mt-4">
                   <h3 className="font-medium">Janna Mary Delfino</h3>

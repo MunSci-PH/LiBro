@@ -11,12 +11,15 @@
   },
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
+    "@plaiceholder/next": "^3.0.0",
     "@supabase/ssr": "^0.2.0",
     "next": "^14.2.0",
+    "plaiceholder": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.2",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",

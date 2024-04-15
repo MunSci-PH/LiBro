@@ -140,7 +140,7 @@ export default function Dashboard() {
                 }
               }}
             >
-              <div className="join">
+              <div className="md:join">
                 <div>
                   <div>
                     <input
@@ -155,7 +155,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <select
-                  className="select select-bordered join-item"
+                  className="my-2 md:my-0 select select-bordered join-item"
                   defaultValue="none"
                   {...register("genre", {
                     onChange: async () => {

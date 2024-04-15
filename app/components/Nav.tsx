@@ -12,7 +12,7 @@ const Nav = async () => {
   if (data.session) isLoggedIn = true;
 
   return (
-    <div className="z-10 navbar bg-green-300 dark:bg-primary rounded-box my-4 mx-auto w-[90%] md:w-[97%] text-white">
+    <div className="z-20 navbar bg-green-300 dark:bg-primary rounded-box my-4 mx-auto w-[90%] md:w-[97%] text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,14 +20,14 @@ const Nav = async () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
+            className="menu menu-md dropdown-content mt-3 z-20 p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
           >
             <li className="font-semibold">
               <Link href="/about/">About</Link>
             </li>
             {isLoggedIn ? (
-              <li>
-                <Link href="/dashboard/mybooks/">MY BOOKS</Link>
+              <li className="font-semibold">
+                <Link href="/dashboard/mybooks/">My Books</Link>
               </li>
             ) : (
               <></>
@@ -66,10 +66,7 @@ const Nav = async () => {
         {isLoggedIn ? (
           <LogoutButton />
         ) : (
-          <Link
-            href="/dashboard/auth/login"
-            className="btn btn-accent text-white"
-          >
+          <Link href="/dashboard/" className="btn btn-accent text-white">
             <FaRightToBracket
               className="w-4 h-4 inline-block"
               width={"1rem"}

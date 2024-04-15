@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "@/public/logo/full-logo.png";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <div className="max-w-2xl text-center mx-auto">
           <div className="mt-5 max-w-2xl">
             <Image
-              src={"/logo/full-logo.png"}
+              src={Logo}
               width={256}
               height={256}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
