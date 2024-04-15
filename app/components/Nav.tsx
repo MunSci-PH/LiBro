@@ -28,7 +28,7 @@ const Nav = async () => {
           </ul>
         </div>
         <Link
-          href="/"
+          href={isLoggedIn ? "/dashboard/" : "/"}
           className="btn btn-ghost text-xl font-extrabold text-white"
         >
           <Image
@@ -44,8 +44,15 @@ const Nav = async () => {
       <div className="navbar-end">
         <div className="hidden lg:flex px-5">
           <ul className="menu menu-horizontal px-1 font-semibold">
+            {isLoggedIn ? (
+              <li>
+                <Link href="/dashboard/mybooks/">MY BOOKS</Link>
+              </li>
+            ) : (
+              <></>
+            )}
             <li>
-              <Link href="#">About</Link>
+              <Link href="#">ABOUT</Link>
             </li>
           </ul>
         </div>

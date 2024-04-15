@@ -68,7 +68,7 @@ export const BorrowOptions: React.FC<IContainerProps> = (props) => {
     }
     if (!error) {
       router.push(
-        "/dashboard/auth/success?message=You have successfully signed up. Check your email."
+        "/dashboard/book/success?message=A new borrow request has been made."
       );
     }
   };

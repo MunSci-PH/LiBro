@@ -20,9 +20,9 @@ export default function Success({
         {searchParams.message}
       </p>
       <div className="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
-        <Link className="btn btn-primary" href="/">
+        <Link className="btn btn-primary" href="/dashboard/mybooks/">
           <FaArrowLeft />
-          Back to homepage
+          Go to Borrowed Books
         </Link>
       </div>
     </div>
