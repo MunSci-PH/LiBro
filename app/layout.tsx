@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { ToastContainer, toast } from "react-toastify";
+import { Analytics } from "@vercel/analytics/react";
 
 import "react-toastify/dist/ReactToastify.min.css";
 import "./globals.css";
@@ -37,6 +38,7 @@ export default function RootLayout({
           </div>
         </div>
         <ToastContainer />
+        <Analytics />
       </body>
     </html>
   );
