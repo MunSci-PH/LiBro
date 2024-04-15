@@ -23,8 +23,15 @@ const Nav = async () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
           >
             <li className="font-semibold">
-              <Link href="#">About</Link>
+              <Link href="/about/">About</Link>
             </li>
+            {isLoggedIn ? (
+              <li>
+                <Link href="/dashboard/mybooks/">MY BOOKS</Link>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
         <Link
