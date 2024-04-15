@@ -15,7 +15,8 @@ export default async function Success() {
     let bookQuery = supabase
       .from("orders")
       .select("*")
-      .eq("user_id", `${user?.id}`);
+      .eq("user_id", `${user?.id}`)
+      .order("created_at", { ascending: false });
 
     const { data, error } = await bookQuery;
 
