@@ -62,4 +62,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [TailwindCSS Documentation](https://tailwindcss.com/docs/) - learn about TailwindCSS
 - [DaisyUI Website](https://daisyui.com/) - learn about DaisyUI
--
